@@ -1,0 +1,24 @@
+==== v1.0 - 06\04\12 ===
+    
+    + Added final functionality to buttons
+    + Finished Outputform
+
+==== v1.1 - 06\04\12 ===
+    
+    + Added calendar to Estimated Return
+    + Fixed Typos in Form
+    + Added Status to CMD
+    () Fixed issue where program crashes if no mapped drives
+    () Cleaned up Source Code a bit
+
+
+++ Feature Request ++
+
+Send feature request and ideas to:
+fterry@stanford.edu
+
+
+
+
+    
+    
