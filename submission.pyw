@@ -17,7 +17,7 @@ def outputform(ClientName, SUNet, Phone, Department, Duedateresponse, cryptform,
     elif cryptform == "Encrypted Win":
         spreadsheet = "spreadsheetcrypt.xlsx"
     else:
-        spreadsheet = "spreadsheetnew.xlsx"
+        spreadsheet = "spreadsheetready.xlsx"
     
 
     
