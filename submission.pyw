@@ -8,6 +8,15 @@ from time import gmtime, strftime
 def outputform(ClientName, SUNet, Phone, Department, Duedateresponse, cryptform, datedueyo, loaneryesno, acyesno, NotesInput):
 # Here we open the template we want to put data into
 
+    def resource_path(relative_path):
+            try:
+                # PyInstaller creates a temp folder and stores path in _MEIPASS
+                base_path = sys._MEIPASS
+            except Exception:
+                base_path = os.path.abspath(".")
+
+            return os.path.join(base_path, relative_path)
+
     if cryptform == "Ready Win":
         spreadsheet = "spreadsheetready.xlsx"
     elif cryptform == "New Win":
@@ -23,7 +32,7 @@ def outputform(ClientName, SUNet, Phone, Department, Duedateresponse, cryptform,
     
 
     # Specify el spreadsheet to open and copy
-    wb2 = load_workbook(spreadsheet)
+    wb2 = load_workbook(resource_path(spreadsheet))
     ws = wb2.active
     
     # Here we make some case scenarios for departments entered
@@ -69,9 +78,10 @@ def outputform(ClientName, SUNet, Phone, Department, Duedateresponse, cryptform,
 
 # Here we save the data into a new work book, and specify where it goes. YEAH BOI!!!!!!
 
-    if not os.path.exists('..\\WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname))):
-        os.makedirs('..\\WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname)))
-    wb2.save('..\\WorkOrders\\{}-{}-{}\\{}-{}-WorkOrder.xlsx'.format(ClientName, Department, str(hostname), ClientName, str(hostname)))
+    if not os.path.exists('WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname))):
+        os.makedirs('WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname)))
+    wb2.save('WorkOrders\\{}-{}-{}\\{}-{}-WorkOrder.xlsx'.format(ClientName, Department, str(hostname), ClientName, str(hostname)))
+
 
 
 ### This is the System Info Grabber Form, The "Print" Function will eventually become WRITE, and will write

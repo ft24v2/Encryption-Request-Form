@@ -110,6 +110,17 @@ class Dialog(QtGui.QDialog):
         
    
     def LOGO(self):
+
+        def resource_path(relative_path):
+            try:
+                # PyInstaller creates a temp folder and stores path in _MEIPASS
+                base_path = sys._MEIPASS
+            except Exception:
+                base_path = os.path.abspath(".")
+
+            return os.path.join(base_path, relative_path)
+
+
         self.LOGOBOX = QtGui.QGroupBox("")
         grid = QtGui.QGridLayout()
         grid.setSpacing(0)
@@ -117,8 +128,12 @@ class Dialog(QtGui.QDialog):
 
         #Process for the Picture:
         label = QtGui.QLabel() 
-        label.setPixmap(QtGui.QPixmap("YO.PNG"))
+        logo = resource_path("YO.png")
+        
+ 
+        label.setPixmap(QtGui.QPixmap(logo))
         label.show()
+        
         
         
 

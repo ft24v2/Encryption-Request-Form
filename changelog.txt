@@ -11,6 +11,12 @@
     () Fixed issue where program crashes if no mapped drives
     () Cleaned up Source Code a bit
 
+==== v1.2 - 06\08\12 ===
+    
+    + WorkOrders folder now generates in same dir as program
+    + Added ICO to program
+    + Cleaned up a tad bit more
+    ()Program now runs as a single EXE. No other files needed. 
 
 ++ Feature Request ++
 

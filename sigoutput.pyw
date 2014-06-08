@@ -14,8 +14,8 @@ def printsig(ClientName, Department, OSversion, modelresult, serialresult, frees
     
     
 
-    if not os.path.exists('..\\WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname))):
-        os.makedirs('..\\WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname)))
+    if not os.path.exists('WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname))):
+        os.makedirs('WorkOrders\\{}-{}-{}'.format(ClientName, Department, str(hostname)))
        
     def mappeddrives():
         
@@ -81,7 +81,7 @@ def printsig(ClientName, Department, OSversion, modelresult, serialresult, frees
            
         print "Making Log"
         
-    with open('..\\WorkOrders\\{}-{}-{}\\Output.htm'.format(ClientName, Department, str(hostname)), "w") as my_file:
+    with open('WorkOrders\\{}-{}-{}\\Output.htm'.format(ClientName, Department, str(hostname)), "w") as my_file:
         my_file.write("<html>")
         my_file.write("<head>")
         my_file.write("<title>{} Summary</title>".format(str(hostname)))
